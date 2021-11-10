@@ -1,0 +1,81 @@
+*{
+    font-family: Poppins;
+}
+.two-hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(95.63% 169.96% at 4.38% 120.46%, #FAF7F1 0%, #AEC3CE 100%);
+    width: 100%;
+    height: 714px;
+}
+.two-hero-container{
+    width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 38px;
+}
+.two-hero-text-container{
+    width: 620px;
+    height: 391px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+.two-hero-heading{
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 64px;
+    margin: 0;
+    padding: 0;
+}
+.two-hero-heading-under{
+    width: 354px;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 64px;
+    border-bottom: 10px solid #FF844B;
+    margin: 0;
+    padding: 0;
+}
+.two-hero-description{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 40px;
+}
+.two-hero-image-container{
+    width: 567px;
+    height: 580px;
+    z-index: 0;
+}
+.two-hero-btn{
+    width: 162px;
+    height: 52px;
+    background: #000000;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.two-hero-btn:hover{
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.20);
+    width: 162px;
+    height: 52px;
+    background: #000000;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}

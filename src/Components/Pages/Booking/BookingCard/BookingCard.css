@@ -1,0 +1,94 @@
+.card-row{
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 868px;
+    padding: 16px;
+    margin: 8px 0px;
+}
+.tabl-rw{
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 868px;
+}
+.tabl-rw-contain{
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.itemside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 442px;
+}
+.aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-sm{
+
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12px;
+}
+.title-text-dark{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: left; 
+}
+.text-muted-small{
+    font-size: 14px;
+    font-weight: 800;
+    text-align: left;
+}
+.price-wrap{
+
+}
+.price-book{
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+}
+.text-right{
+
+}
+.btn-danger{
+    width: 131px;
+    height: 45px;
+    background: rgba(255, 42, 42, 0.2);
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #ff1919;
+    border: none;
+    outline: none;
+}
+.btn-danger:hover{
+    width: 131px;
+    height: 45px;
+    background: #ff1919;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0px 4px 20px rgba(255, 21, 21, 0.349);
+    cursor: pointer;
+}
