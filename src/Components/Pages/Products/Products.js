@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../Loading';
-import PackageCard from './PackageCard/PackageCard';
-import './Packages.css';
+import PackageCard from './ProductsCard/ProductsCard';
+import './Products.css';
 const Packages = () => {
     const [packages, setPackages] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://pure-island-82181.herokuapp.com/packages')
+        fetch('https://pure-island-82181.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setPackages(data))
             .finally(data => setLoading(false))

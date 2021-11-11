@@ -26,8 +26,8 @@ const HomePackages = () => {
                         </span>
                         <p className="home-pckg-desc">Get the full home-home-pckg experience included with all of your needs on the trips</p>
                     </div>
-                    <NavLink to='/packages'>
-                        <button className="all-home-pckg-btn">View Packages</button>
+                    <NavLink to='/products'>
+                        <button className="all-home-pckg-btn">View Products</button>
                     </NavLink>
                 </div>
                 {!loading ?

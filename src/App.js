@@ -5,13 +5,12 @@ import PrivateRoute from './Components/Pages/PrivateRoute/PrivateRoute';
 import AuthProvider from "./contexts/AuthProvider";
 import Navbar from './Components/Pages/Navbar/NavBar';
 import Home from './Components/Pages/HomePage/Home';
-import SignIn from './Components/Pages/SignIn/SignIn';
-import SignUp from './Components/Pages/SignUp/SignUp';
 import NotFound from './Components/Pages/NotFound/NotFound';
 import Footer from './Components/Pages/Footer/Footer';
 import Booking from './Components/Pages/Booking/Booking';
-import Packages from "./Components/Pages/Packages/Packages";
-import Details from "./Components/Details";
+import Products from "./Components/Pages/Products/Products";
+import Register from "./Components/Pages/Register/Register";
+import Login from "./Components/Pages/Login/Login";
 
 
 function App() {
@@ -27,23 +26,17 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route exact path="/packages">
-              <Packages></Packages>
+            <Route exact path="/products">
+              <Products></Products>
             </Route>
-            <PrivateRoute path="/bookings">
+            <PrivateRoute path="/Orders">
               <Booking></Booking>
             </PrivateRoute>
-            <PrivateRoute path="/packages/details/:packageId">
-              <Details></Details>
-            </PrivateRoute>
-            <PrivateRoute path="/home-packages/details/:homepackageId">
-              <Details></Details>
-            </PrivateRoute>
-            <Route path="/sign-in">
-              <SignIn></SignIn>
+            <Route path="/log-in">
+              <Login></Login>
             </Route>
-            <Route path="/sign-up">
-              <SignUp></SignUp>
+            <Route path="/register">
+              <Register></Register>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

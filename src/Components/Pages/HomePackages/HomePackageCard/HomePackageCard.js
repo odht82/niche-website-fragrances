@@ -1,6 +1,5 @@
 import React from 'react';
 import './HomePackageCard.css';
-import { NavLink } from 'react-router-dom';
 import placeholder from '../../../../Assets/placeholder.png';
 const HomePackageCard = (props) => {
     const { _id, place, name, activities, places, duration, price, pricetype, image } = props.pack;
@@ -24,9 +23,7 @@ const HomePackageCard = (props) => {
                     <h2 className="pkg-price-tag">From ${price}</h2>
                     <p className="pkg-price-type">/{pricetype}</p>
                 </div>
-                <NavLink to={`/packages/details/${_id}`}>
-                    <button className="pkg-btn">View Package</button>
-                </NavLink>
+                <button className="pkg-btn">Make Order</button>
             </div>
         </div >
     );

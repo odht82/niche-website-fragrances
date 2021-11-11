@@ -33,7 +33,7 @@ const NavBar = () => {
             <nav className='navbar'>
                 <div className='navbar-container container'>
                     <Link style={{ color: '#020202', listStyle: 'none', textDecoration: 'none', fontWeight: '800', fontSize: '18px', }} to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        <p >Hoque Travel.</p>
+                        <p style={{ color: '#020202', textDecoration: 'none', fontWeight: '700', fontSize: '22px', }}>Fragrance Shop.</p>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         {click ? <FaTimes style={{ color: '#FF844B' }} /> : <VscListSelection style={{ color: '#FF844B' }} />}
@@ -46,37 +46,27 @@ const NavBar = () => {
                         </li>
                         <li className='nav-item'>
                             <NavLink activeStyle={{ fontWeight: '800', fontSize: '18px', color: '#FF844B' }}
-                                to='/packages'
+                                to='/products'
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
-                                Packages
-                            </NavLink>
-                        </li>
-
-                        <li className='nav-item'>
-                            <NavLink activeStyle={{ fontWeight: '800', fontSize: '18px', color: '#FF844B' }}
-                                to='/aboutUs'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                About Us
+                                Products
                             </NavLink>
                         </li>
                         {user.email && <li className='nav-item'>
                             <NavLink activeStyle={{ fontWeight: '800', fontSize: '18px', color: '#FF844B' }}
-                                to='/bookings'
+                                to='/orders'
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
-                                Bookings
+                                Orders
                             </NavLink>
                         </li>
                         }
                         <div className=" nav-menu-btn">
                             {user.email ?
                                 (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                    <Button className='btn-link' buttonStyle='btn--outline' onClick={logOut}>Sign Out</Button>
+                                    <Button className='btn-link' buttonStyle='btn--outline' onClick={logOut}>LOG Out</Button>
                                     {user.photoURL ?
                                         <div style={{ backgroundColor: 'yellow', width: "50px", height: "50px", borderRadius: '8px', marginLeft: '10px', border: '2px solid #020202' }}>
                                             <img style={{ width: "100%", height: "100%", objectFit: 'cover', borderRadius: '6px' }} src={user.photoURL} alt="" />
@@ -94,16 +84,16 @@ const NavBar = () => {
                                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                                     <li className='nav-btn'>
                                         {button ?
-                                            (<Link to='/sign-in' className='btn-link'>
-                                                <Button buttonStyle='btn--outline'>SIGN IN</Button>
+                                            (<Link to='/log-in' className='btn-link'>
+                                                <Button buttonStyle='btn--outline'>LOG IN</Button>
                                             </Link>)
                                             :
-                                            (<Link to='/sign-in' className='btn-link'>
-                                                <Button buttonStyle='btn--outline' buttonSize='btn--mobile' onClick={closeMobileMenu}>SIGN IN</Button>
+                                            (<Link to='/log-in' className='btn-link'>
+                                                <Button buttonStyle='btn--outline' buttonSize='btn--mobile' onClick={closeMobileMenu}>LOG IN</Button>
                                             </Link>)}
                                     </li>
                                     <li className='nav-btn'>
-                                        {button ? (<Link to='/sign-up' className='btn-link'><Button buttonStyle='btn--primary'>REGISTER</Button></Link>) : (<Link to='/sign-up' className='btn-link'><Button buttonStyle='btn--primary' buttonSize='btn--mobile' onClick={closeMobileMenu} >REGISTER</Button></Link>)}
+                                        {button ? (<Link to='/register' className='btn-link'><Button buttonStyle='btn--primary'>REGISTER</Button></Link>) : (<Link to='/register' className='btn-link'><Button buttonStyle='btn--primary' buttonSize='btn--mobile' onClick={closeMobileMenu} >REGISTER</Button></Link>)}
                                     </li>
                                 </ul>
                             }
