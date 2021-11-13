@@ -62,60 +62,75 @@ const ManageOrders = () => {
     console.log(orders);
 
     const handleShippingupdate = (productName, email) => {
-        const productId = { productName, email };
-        fetch(`https://fragrance-shop.herokuapp.com/orders/shipped`, {
-            method: 'PUT',
-            headers: {
-                'authorization': `Bearer ${token}`,
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(productId)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    console.log(data);
-                    setSuccessshipping(true);
-                    setLoading(false);
-                }
+        const proceed = window.confirm(`Are you sure, to update status to Shipped of ${id} ?`);
+        if (proceed) {
+            const productId = { productName, email };
+            fetch(`https://fragrance-shop.herokuapp.com/orders/shipped`, {
+                method: 'PUT',
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(productId)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount) {
+                        console.log(data);
+                        setSuccessshipping(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false)
+        }
     }
 
     const handlePendingupdate = (productName, email) => {
-        const productId = { productName, email };
-        fetch(`https://fragrance-shop.herokuapp.com/orders/pending`, {
-            method: 'PUT',
-            headers: {
-                'authorization': `Bearer ${token}`,
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(productId)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    console.log(data);
-                    setSuccesspending(true);
-                    setLoading(false);
-                }
+        const proceed = window.confirm(`Are you sure, to update status to pending of ${id} ?`);
+        if (proceed) {
+            const productId = { productName, email };
+            fetch(`https://fragrance-shop.herokuapp.com/orders/pending`, {
+                method: 'PUT',
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(productId)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount) {
+                        console.log(data);
+                        setSuccesspending(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false);
+        }
     }
 
     const handleRemoveOrder = (id) => {
-        fetch(`https://fragrance-shop.herokuapp.com/orders/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.acknowledged) {
-                    console.log(data);
-                    setSuccessdeleting(true);
-                    setLoading(false);
+        const proceed = window.confirm(`Are you sure, to Delete this product ${id} ?`);
+        if (proceed) {
+            fetch(`https://fragrance-shop.herokuapp.com/orders/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
                 }
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        console.log(data);
+                        setSuccessdeleting(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false);
+        }
     }
 
 

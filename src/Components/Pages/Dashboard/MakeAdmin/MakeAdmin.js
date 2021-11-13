@@ -37,43 +37,54 @@ const MakeAdmin = () => {
     }, [token, users])
 
     const handleAdminSubmit = (email) => {
-        const user = { email };
-        fetch('https://fragrance-shop.herokuapp.com/users/admin', {
-            method: 'PUT',
-            headers: {
-                'authorization': `Bearer ${token}`,
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    console.log(data);
-                    setSuccessadmin(true);
-                    setLoading(false);
-                }
+        const proceed = window.confirm(`Are you sure, to Make Admin this ${email} ?`);
+        if (proceed) {
+            const user = { email };
+            fetch('https://fragrance-shop.herokuapp.com/users/admin', {
+                method: 'PUT',
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount) {
+                        console.log(data);
+                        setSuccessadmin(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false);
+        }
     }
 
     const handleMemberSubmit = (email) => {
-        const user = { email };
-        fetch(`https://fragrance-shop.herokuapp.com/users/member`, {
-            method: 'PUT',
-            headers: {
-                'authorization': `Bearer ${token}`,
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    console.log(data);
-                    setSuccessmember(true);
-                    setLoading(false);
-                }
+        const proceed = window.confirm(`Are you sure, to Make Demotion this ${email} to member ?`);
+        if (proceed) {
+            const user = { email };
+            fetch(`https://fragrance-shop.herokuapp.com/users/member`, {
+                method: 'PUT',
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount) {
+                        console.log(data);
+                        setSuccessmember(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false);
+        }
+
     }
 
     return (

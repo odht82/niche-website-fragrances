@@ -11,13 +11,19 @@ import { Box } from '@mui/system';
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';
 import WifiProtectedSetupTwoToneIcon from '@mui/icons-material/WifiProtectedSetupTwoTone';
 import LoadingButton from '@mui/lab/LoadingButton';
+import { Alert } from '@mui/material';
 
 const ManageProducts = () => {
     const { token } = useAuth();
     const [products, setProducts] = useState([]);
+    const [successdeleting, setSuccessdeleting] = useState(false);
+    const [id, setId] = useState('');
     const [loading, setLoading] = React.useState(false);
-    function handleClick() {
+
+    const handleDelete = (id) => {
         setLoading(true);
+        setId(id);
+        handleRemoveOrder(id)
     }
 
     useEffect(() => {
@@ -31,6 +37,28 @@ const ManageProducts = () => {
             .then(data => setProducts(data));
     }, [token]);
     console.log(products);
+
+    const handleRemoveOrder = (id) => {
+        const proceed = window.confirm(`Are you sure, to Delete this product ${id} ?`);
+        if (proceed) {
+            fetch(`https://fragrance-shop.herokuapp.com/products/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        console.log(data);
+                        setSuccessdeleting(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false);
+        }
+    }
 
     return (
         <div>
@@ -59,7 +87,6 @@ const ManageProducts = () => {
                                 <TableCell align="center">
                                     <LoadingButton
                                         color="success"
-                                        onClick={handleClick}
                                         loading={loading}
                                         loadingPosition="start"
                                         startIcon={<WifiProtectedSetupTwoToneIcon />}
@@ -69,7 +96,7 @@ const ManageProducts = () => {
                                     </LoadingButton>
                                     <LoadingButton
                                         color="error"
-                                        onClick={handleClick}
+                                        onClick={handleDelete}
                                         loading={loading}
                                         loadingPosition="start"
                                         startIcon={<DeleteForeverTwoToneIcon />}
@@ -84,6 +111,9 @@ const ManageProducts = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+            <div>
+                {successdeleting && <Alert style={{ marginTop: '20px', marginBottom: '20px' }} severity="error">{id} successfully Deleted!</Alert>}
+            </div>
         </div >
     );
 };
