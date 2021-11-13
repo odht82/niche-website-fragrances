@@ -18,19 +18,21 @@
     color: #fff;
   }
   
-  .footer-subscription > p {
+  .footer-subscription {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
   }
   
   .footer-subscription-heading {
     margin-bottom: 24px;
-    font-size: 24px;
+    font-size: 32px;
+    color: #ff844b;
   }
   
   .footer-subscription-text {
     margin-bottom: 24px;
     font-size: 20px;
+    font-weight: 200;
   }
   
   .footer-input {
@@ -41,6 +43,32 @@
     border: none;
     font-size: 16px;
     border: 1px solid #fff;
+  }
+
+  .subscribe-button {
+    width: 120px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ff844b48;
+    border: 3px solid #FF844B;
+    font-size: 16px;
+    margin-left: 20px;
+    font-weight: 800;
+    color: #ffff;
+  }
+  
+  .subscribe-button:hover {
+    width: 120px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ff844b;
+    border: 3px solid #ff844b48;
+    font-size: 16px;
+    margin-left: 20px;
+    font-weight: 800;
+    color: #000;
   }
   
   .footer-links {
