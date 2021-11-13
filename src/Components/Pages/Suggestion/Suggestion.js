@@ -10,8 +10,8 @@ const Suggestion = () => {
                     <img src={bottomimage} alt="" />
                 </div>
                 <div className="two-hero-text-container">
-                    <h1 className="two-hero-heading">Visit Most Popular <br /><span className="two-hero-heading-under">Destination</span></h1>
-                    <p className="two-hero-description">Dosen’t have an ideas hwere to go? maybe you can check our popular destination list you can visit, you sure want to go there after you check it up</p>
+                    <h1 className="two-hero-heading">ALUMINUM FREE DEODORANT <br />TO TRY</h1>
+                    <p className="two-hero-description">You’re not going to believe how good a deodorant formulated without aluminum can make you smell. That odor-busting technology is going to blow your mind like the ending of Inception x1000.</p>
                     <button className="two-hero-btn">Check List</button>
                 </div>
             </div>

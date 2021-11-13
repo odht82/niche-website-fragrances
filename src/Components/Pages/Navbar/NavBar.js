@@ -5,10 +5,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import { VscListSelection } from 'react-icons/vsc';
 import useAuth from '../../../hooks/useAuth';
+import { FaSprayCan } from 'react-icons/fa';
 
 
 const NavBar = () => {
-    const { user, logOut } = useAuth();
+    const { user, logout } = useAuth();
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -33,7 +34,8 @@ const NavBar = () => {
             <nav className='navbar'>
                 <div className='navbar-container container'>
                     <Link style={{ color: '#020202', listStyle: 'none', textDecoration: 'none', fontWeight: '800', fontSize: '18px', }} to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        <p style={{ color: '#020202', textDecoration: 'none', fontWeight: '700', fontSize: '22px', }}>Fragrance Shop.</p>
+
+                        <p style={{ color: '#020202', textDecoration: 'none', fontWeight: '700', fontSize: '22px', }}><FaSprayCan style={{ marginRight: '10px' }} /> Fragrance Shop.</p>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         {click ? <FaTimes style={{ color: '#FF844B' }} /> : <VscListSelection style={{ color: '#FF844B' }} />}
@@ -63,10 +65,20 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         }
+                        {user.email && <li className='nav-item'>
+                            <NavLink activeStyle={{ fontWeight: '800', fontSize: '18px', color: '#FF844B' }}
+                                to='/dashboard'
+                                className='nav-links'
+                                onClick={closeMobileMenu}
+                            >
+                                Dashboard
+                            </NavLink>
+                        </li>
+                        }
                         <div className=" nav-menu-btn">
                             {user.email ?
                                 (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                    <Button className='btn-link' buttonStyle='btn--outline' onClick={logOut}>LOG Out</Button>
+                                    <Button className='btn-link' buttonStyle='btn--outline' onClick={logout}>LOG Out</Button>
                                     {user.photoURL ?
                                         <div style={{ backgroundColor: 'yellow', width: "50px", height: "50px", borderRadius: '8px', marginLeft: '10px', border: '2px solid #020202' }}>
                                             <img style={{ width: "100%", height: "100%", objectFit: 'cover', borderRadius: '6px' }} src={user.photoURL} alt="" />
@@ -93,7 +105,7 @@ const NavBar = () => {
                                             </Link>)}
                                     </li>
                                     <li className='nav-btn'>
-                                        {button ? (<Link to='/register' className='btn-link'><Button buttonStyle='btn--primary'>REGISTER</Button></Link>) : (<Link to='/register' className='btn-link'><Button buttonStyle='btn--primary' buttonSize='btn--mobile' onClick={closeMobileMenu} >REGISTER</Button></Link>)}
+                                        {button ? (<Link to='/register' className='btn-link'><Button buttonStyle='btn--primary'>REGISTER</Button></Link>) : (<Link to='/register' className='btn-link'><Button buttonStyle='btn--outline' buttonSize='btn--mobile' onClick={closeMobileMenu} >REGISTER</Button></Link>)}
                                     </li>
                                 </ul>
                             }

@@ -86,24 +86,25 @@ const useFirebase = () => {
     }, [auth])
 
     useEffect(() => {
-        fetch(`https://fragrance-shop.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
 
     const logout = () => {
         setIsLoading(true);
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        })
+        signOut(auth)
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+            })
             .finally(() => setIsLoading(false));
     }
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://fragrance-shop.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -122,7 +123,7 @@ const useFirebase = () => {
         registerUser,
         loginUser,
         signInWithGoogle,
-        logout,
+        logout
     }
 }
 

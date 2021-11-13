@@ -3,8 +3,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 60px;
-    background: #FFFFFF;
+    padding: 20px 0px 40px 0px;
+    background: #fcf9f8;
 }
 .package-container{
     width: 1300px;
@@ -24,34 +24,17 @@
     flex-direction: column;
     justify-content: flex-start;
 }
-.package-heading-text-head{
-    display: flex;
-    justify-content: center;
-}
 .package-headline{
-    font-weight: 700;
+    font-weight: 200;
     font-size: 42px;
     line-height: 52px;
     margin: 0px 0px 0px 12px;
-}
-.package-headline-under{
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 52px;
-    border-bottom: 8px solid #FF844B;
-    margin: 0;
-}
-.package-desc{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
 }
 .all-pkg-btn{
     width: 156px;
     height: 48px;
     background: rgba(255, 132, 75, 0.2);
-    border-radius: 10px;
+    border-radius: 6px;
     font-weight: 700;
     font-size: 14px;
     line-height: 21px;
@@ -65,7 +48,7 @@
     width: 156px;
     height: 48px;
     background: rgb(255, 132, 75);
-    border-radius: 10px;
+    border-radius: 6px;
     font-weight: 700;
     font-size: 14px;
     line-height: 21px;
@@ -76,7 +59,7 @@
     cursor: pointer;
 }
 .package-cards{
-    margin-top: 60px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;

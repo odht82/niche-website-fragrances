@@ -2,13 +2,15 @@ import { Container, Typography, TextField, Button, CircularProgress, Alert } fro
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
 import login from '../../../images/login.png'
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from './../../../hooks/useAuth';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
+    const {signInWithGoogle, user, registerUser, isLoading, authError } = useAuth();
+    
     const history = useHistory();
-    const {handleGoogleSignIn, user, registerUser, isLoading, authError } = useAuth();
+    const location = useLocation();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -24,6 +26,9 @@ const Register = () => {
         }
         registerUser(loginData.email, loginData.password, loginData.name, history);
         e.preventDefault();
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
     }
     return (
         <Container>

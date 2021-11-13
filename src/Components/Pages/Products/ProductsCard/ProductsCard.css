@@ -2,9 +2,9 @@
     width: 416px;
     height: 428px;
     background: #FFFFFF;
-    border: 2px solid rgba(255, 132, 75, 0.4);
+    border: 3px solid #f6e9e4;
     box-sizing: border-box;
-    border-radius: 22px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,31 +16,14 @@
     width: 416px;
     height: 428px;
     background: #FFFFFF;
-    border: 2px solid rgba(255, 132, 75, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
-    border-radius: 22px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 22px;
-}
-.place-location{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 12px;
-}
-.place-img{
-    height: 24px;
-    width: 24px;
-}
-.place-text{
-    font-weight: 600;
-    margin: 0px 0px 0px 12px;
-    font-size: 16px;
-    line-height: 21px;
-    color: #313131;
 }
 .Products-name{
     font-weight: 800;
@@ -48,17 +31,18 @@
     font-size: 22px;
     line-height: 26px;
     color: #000000;
+    height: 60px;
 }
 .Products-img{
-    width: 372px;
-    height: 180px;
-    border-radius: 16px;
-    margin: 12px 0px;
+    width: 368px;
+    height: 240px;
+    border-radius: 8px;
+    margin: 0px;
 }
 .Pdcts-img{
-    width: 372px;
-    height: 180px;
-    border-radius: 16px;
+    width: 368px;
+    height: 240px;
+    border-radius: 8px;
     object-fit: cover;
 }
 .Products-feature{
@@ -67,29 +51,6 @@
     align-items: center;
     width: 100%;
     margin-bottom: 36px;
-}
-.Pdct-activitis{
-    margin: 0px 22px;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 21px;
-    color: #000000;
-}
-.Pdct-places{
-    margin: 0px 22px;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 21px;
-    color: #000000;
-    margin: 0px 10px;
-}
-.Pdct-duration{
-    margin: 0px 22px;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 21px;
-    color: #000000;
-    margin: 0px 10px;
 }
 .Pdcts-price-btn{
     display: flex;
@@ -120,7 +81,7 @@
     width: 142px;
     height: 48px;
     background: rgba(255, 132, 75, 0.2);
-    border-radius: 10px;
+    border-radius: 6px;
     outline: none;
     border: none;
     font-weight: 900;
@@ -134,7 +95,7 @@
     width: 142px;
     height: 48px;
     background: rgb(255, 132, 75);
-    border-radius: 10px;
+    border-radius: 6px;
     outline: none;
     border: none;
     font-weight: 900;

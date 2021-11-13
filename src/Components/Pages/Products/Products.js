@@ -1,46 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../Loading';
-import PackageCard from './ProductsCard/ProductsCard';
+import ProductCard from './ProductsCard/ProductsCard';
 import './Products.css';
-const Packages = () => {
-    const [packages, setPackages] = useState([]);
+import NavBar from '../Navbar/NavBar';
+import Footer from '../Footer/Footer';
+const Products = () => {
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://pure-island-82181.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
-            .then(data => setPackages(data))
-            .finally(data => setLoading(false))
-    }, [packages])
-    // console.log(packages)
+            .then(data => setProducts(data))
+            .finally(setLoading(false))
+    }, [products])
+    // console.log(products)
     // console.log(loading)
 
     return (
-        <div className="package">
-            <div className="package-container">
-                <div className="package-heading">
-                    <div className="package-heading-text">
-                        <span className="package-heading-text-head">
-                            <h1 className="package-headline-under">Hoque Travel</h1><h1 className="package-headline">Tour Packages</h1>
-                        </span>
-                        <p className="package-desc">Get the full package experience included with all of your needs on the trips</p>
+        <>
+            <NavBar></NavBar>
+            <div className="package">
+                <div className="package-container">
+                    <div className="package-heading">
+                        <div className="package-heading-text">
+                            <h1 className="package-headline-under">YOU GOT THIS</h1>
+                        </div>
                     </div>
-                </div>
-                {!loading ?
+                    {!loading ?
 
-                    (<div className="package-cards">
-                        {packages.map(pack =>
-                            <PackageCard
-                                key={pack._id}
-                                pack={pack}
-                            ></PackageCard>
-                        )}
-                    </div>)
-                    : <Loading></Loading>
-                }
-            </div>
-        </div >
+                        (<div className="package-cards">
+                            {products.map(product =>
+                                <ProductCard
+                                    key={product._id}
+                                    product={product}
+                                ></ProductCard>
+                            )}
+                        </div>)
+                        :
+                        <Loading></Loading>
+                    }
+                </div>
+            </div >
+            <Footer></Footer>
+        </>
     );
 };
 
-export default Packages;
+export default Products;
