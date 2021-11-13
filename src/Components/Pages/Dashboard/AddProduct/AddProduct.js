@@ -34,7 +34,7 @@ const AddProduct = () => {
             image: image
         }
         console.log(productinfo)
-        fetch('http://localhost:5000/products', {
+        fetch('https://fragrance-shop.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'authorization': `Bearer ${token}`,

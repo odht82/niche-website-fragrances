@@ -50,7 +50,7 @@ const ManageOrders = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders`
+        const url = `https://fragrance-shop.herokuapp.com/orders`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -63,7 +63,7 @@ const ManageOrders = () => {
 
     const handleShippingupdate = (productName, email) => {
         const productId = { productName, email };
-        fetch(`http://localhost:5000/orders/shipped`, {
+        fetch(`https://fragrance-shop.herokuapp.com/orders/shipped`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -83,7 +83,7 @@ const ManageOrders = () => {
 
     const handlePendingupdate = (productName, email) => {
         const productId = { productName, email };
-        fetch(`http://localhost:5000/orders/pending`, {
+        fetch(`https://fragrance-shop.herokuapp.com/orders/pending`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -102,7 +102,7 @@ const ManageOrders = () => {
     }
 
     const handleRemoveOrder = (id) => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://fragrance-shop.herokuapp.com/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${token}`

@@ -9,7 +9,7 @@ const REview = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const url = "http://localhost:5000/reviews"
+        const url = "https://fragrance-shop.herokuapp.com/reviews"
         fetch(url)
             .then(res => res.json())
             .then(data => setReviews(data))

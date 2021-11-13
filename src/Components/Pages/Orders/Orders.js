@@ -29,7 +29,7 @@ const Orders = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders/own?email=${user.email}`
+        const url = `https://fragrance-shop.herokuapp.com/orders/own?email=${user.email}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -40,7 +40,7 @@ const Orders = () => {
     }, [user.email, token, orders])
 
     const handleRemoveOrder = (id) => {
-        fetch(`http://localhost:5000/orders/own/${user.email}?id=${id}`, {
+        fetch(`https://fragrance-shop.herokuapp.com/orders/own/${user.email}?id=${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${token}`

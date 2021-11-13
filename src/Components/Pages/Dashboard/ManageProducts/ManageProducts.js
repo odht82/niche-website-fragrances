@@ -21,7 +21,7 @@ const ManageProducts = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/products`
+        const url = `https://fragrance-shop.herokuapp.com/products`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`

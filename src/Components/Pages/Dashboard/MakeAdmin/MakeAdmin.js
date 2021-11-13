@@ -26,7 +26,7 @@ const MakeAdmin = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/users`
+        const url = `https://fragrance-shop.herokuapp.com/users`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -38,7 +38,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = (email) => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://fragrance-shop.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -58,7 +58,7 @@ const MakeAdmin = () => {
 
     const handleMemberSubmit = (email) => {
         const user = { email };
-        fetch(`http://localhost:5000/users/member`, {
+        fetch(`https://fragrance-shop.herokuapp.com/users/member`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

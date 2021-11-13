@@ -23,7 +23,7 @@ const ProductsCard = (props) => {
                 orderStatus: 'pending'
             }
             console.log(orderinfo)
-            fetch('http://localhost:5000/orders', {
+            fetch('https://fragrance-shop.herokuapp.com/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -35,7 +35,7 @@ const GiveReview = () => {
             revieweruser: revieweruser
         }
         // console.log(reviewinfo)
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://fragrance-shop.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
