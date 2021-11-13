@@ -40,20 +40,25 @@ const Orders = () => {
     }, [user.email, token, orders])
 
     const handleRemoveOrder = (id) => {
-        fetch(`https://fragrance-shop.herokuapp.com/orders/own/${user.email}?id=${id}`, {
-            method: 'DELETE',
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.acknowledged) {
-                    console.log(data);
-                    setSuccessdeleting(true);
-                    setLoading(false);
+        const proceed = window.confirm(`Are you sure, to Delete this product ${id} ?`);
+        if (proceed) {
+            fetch(`https://fragrance-shop.herokuapp.com/orders/own/${user.email}?id=${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
                 }
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.acknowledged) {
+                        console.log(data);
+                        setSuccessdeleting(true);
+                        setLoading(false);
+                    }
+                })
+        } else {
+            setLoading(false)
+        }
     }
 
 
