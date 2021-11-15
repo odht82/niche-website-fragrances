@@ -12,7 +12,7 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState('');
-
+    const role = 'member';
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
@@ -24,7 +24,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // save user to the database
-                saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST', role);
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -102,8 +102,8 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
+    const saveUser = (email, displayName, method, role) => {
+        const user = { email, role, displayName };
         fetch('https://fragrance-shop.herokuapp.com/users', {
             method: method,
             headers: {
