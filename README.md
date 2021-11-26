@@ -20,4 +20,4 @@ Dashboard, Login with google, Login & Register with email & password, Reveiws ma
 
 
 ## Server Repo Link
-[Fragrance-Shop. Server Side Repo](https://github.com/programming-hero-web-course-4/niche-website-server-side-odht82)
+[Fragrance-Shop. Server Side Repo](https://github.com/odht82/server-side-fragrances)
